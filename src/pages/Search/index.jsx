@@ -1,45 +1,32 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { PokemonSearch, PokemonSearchData } from '../../components'
 
 const Search = () => {
   const [search, setSearch] = useState('')
-  const [search1, setSearch1] = useState('')
-
-  const searchHandler = (e) => {
-    setSearch(e.target.value)
-  }
-
-  const submitHandler = (e) => {
-    e.preventDefault()
-    setSearch1(search)
-  }
+  const [input, setInput] = useState('')
+  const [data, setData] = useState(null)
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch(
-        `https://www.superheroapi.com/api.php/917578506211536/search/${search1}`,
-        {
-          method: 'GET',
-          mode: 'cors',
-        }
-      )
-      const data = await response.json()
-
-      if (data.results && data.results.length > 0) {
-        console.log(data.results[0].id)
+      if (search) {
+        const response = await axios.get(
+          `https://pokeapi.co/api/v2/pokemon/${search}`
+        )
+        setData([response.data])
       } else {
-        console.log('No results found.')
+        setData(null)
       }
     }
+
     getData()
-  }, [search1])
+  }, [search])
 
   return (
-    <form>
-      <input type='text' onChange={searchHandler} />
-      <button className='buttons' onClick={submitHandler}>
-        Search
-      </button>
-    </form>
+    <>
+      <PokemonSearch setSearch={setSearch} input={input} setInput={setInput} />
+      {data && <PokemonSearchData data={data} />}
+    </>
   )
 }
 

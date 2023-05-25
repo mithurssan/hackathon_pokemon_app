@@ -3,4 +3,5 @@ export { default as PokemonGallery } from './PokemonGallery'
 export { default as PokemonItem } from './PokemonItem'
 export { default as PokemonCard } from './PokemonCard'
 export { default as Button } from './Button/index.jsx'
-
+export { default as PokemonSearch } from './PokemomSearch/index.jsx'
+export { default as PokemonSearchData } from './PokemonSearchData/index.jsx'
