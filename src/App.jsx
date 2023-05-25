@@ -1,7 +1,8 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Navbar } from './component'
-import { SuperItem, SuperList, Home, Search } from './component/pages'
+import { Navbar } from './components'
+import { SuperItem, SuperList, Home, Search } from './pages'
+import './App.css'
 
 const App = () => {
   return (
