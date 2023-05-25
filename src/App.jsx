@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Navbar } from './components'
-import { SuperItem, SuperList, Home, Search } from './pages'
+import { PokemonItem, PokemonList, Home, Search } from './pages'
 import './App.css'
 
 const App = () => {
@@ -10,8 +10,8 @@ const App = () => {
       <Route path='/' element={<Navbar />}>
         <Route index element={<Home />} />
         <Route path='list'>
-          <Route index element={<SuperList />} />
-          <Route path=':id' element={<SuperItem />} />
+          <Route index element={<PokemonList />} />
+          <Route path=':id' element={<PokemonItem />} />
         </Route>
         <Route path='/search' element={<Search />} />
       </Route>
