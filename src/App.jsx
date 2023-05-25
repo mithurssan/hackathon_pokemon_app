@@ -11,7 +11,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path='list'>
           <Route index element={<PokemonList />} />
-          <Route path=':id' element={<PokemonItem />} />
+          <Route path=':name' element={<PokemonItem />} />
         </Route>
         <Route path='/search' element={<Search />} />
       </Route>
