@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "./style.css"
 
 const PokemonItem = ({ pokemon }) => {
-  return (
-    <Link to={`${pokemon.name}`}>
-      <ul>
-        <li>{pokemon.name}</li>
-      </ul>
+    return (
+        <ul className="pokemon-list">
+            <li className="pokemons">
+                <Link to={`${pokemon.name}`}>
+                    {pokemon.name}
+                </Link>
+            </li>
+        </ul>
 
-      {/* <div className="pokemon-image">
-                <img src={pokemon.image} alt={pokemon.name} />
-            </div> */}
-    </Link>
-  )
+    )
 }
 
 export default PokemonItem
