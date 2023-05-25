@@ -3,8 +3,22 @@
     justify-content: center;
 }
 
-.pokemon-card{
+.pokemon-card {
+    font-size: 30px;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 25px;
+    padding: 60px;
+    color: #ECE54C;
+}
+
+.pokemon-card img {
+    width: 100%;
+}
+
+.types {
+    margin-top: 15px;
+}
+
+.physicals {
+    margin-bottom: 15px;
 }
