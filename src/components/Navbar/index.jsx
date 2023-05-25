@@ -1,18 +1,31 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import './style.css'
 
 const NavBar = () => {
+  const style = {
+    color: 'white',
+  }
+
+  const navActive = ({ isActive }) => (isActive ? style : undefined)
+
   return (
     <>
       <nav>
         <li>
-          <NavLink to='/'>Home</NavLink>
+          <NavLink to='/' style={navActive}>
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to='/list'>Pokemon List</NavLink>
+          <NavLink to='/list' style={navActive}>
+            Pokemon List
+          </NavLink>
         </li>
         <li>
-          <NavLink to='/search'>Search</NavLink>
+          <NavLink to='/search' style={navActive}>
+            Search
+          </NavLink>
         </li>
       </nav>
       <Outlet />
