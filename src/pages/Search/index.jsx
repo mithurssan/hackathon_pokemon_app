@@ -25,7 +25,9 @@ const Search = () => {
   return (
     <>
       <PokemonSearch setSearch={setSearch} input={input} setInput={setInput} />
-      {data && <PokemonSearchData data={data} />}
+      <div className='search-container'>
+        {data && <PokemonSearchData data={data} />}
+      </div>
     </>
   )
 }
